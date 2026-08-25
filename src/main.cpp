@@ -5,7 +5,7 @@
 #include "alerts.h"
 #include "cloud.h"
 
-constexpr unsigned long SENSOR_INTERNAL_MS = 2000;
+constexpr unsigned long SENSOR_INTERVAL_MS = 2000;
 
 unsigned long lastSensorRead = 0;
 bool armed = true;
@@ -26,7 +26,7 @@ void loop() {
     if (now - lastSensorRead >= SENSOR_INTERVAL_MS) {
         lastSensorRead = now;
 
-        SensorData data = readSensor();
+        SensorData data = readSensors();
 
         int healthScore = calculateHealthScore(data);
 

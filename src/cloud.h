@@ -9,4 +9,4 @@ void uploadSensorData(
     int healthScore,
     bool armed,
     bool alert
-)
+);

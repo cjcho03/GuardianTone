@@ -13,7 +13,7 @@ The current version is an early software prototype and does not require the phys
 - Basic impact detection
 - Preliminary Guitar Health Score calculation
 - Armed / disarmed monitoring state
-- Alert handling placeholders
+- Red LED and buzzer output for detected impacts
 - Cloud upload placeholder using JSON-style Serial output
 - Modular code structure for sensors, health scoring, alerts, and cloud communication
 
@@ -26,7 +26,7 @@ Planned additions include:
 - Real temperature and humidity sensor support
 - LSM6DSO accelerometer and gyroscope integration
 - Capacitive touch control for arming and disarming monitoring
-- LED and buzzer alerts
+- Yellow LED warning-state behavior
 - Wi-Fi connectivity
 - Cloud data storage and communication
 - Historical temperature and humidity tracking
