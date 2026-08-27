@@ -28,7 +28,7 @@ bool detectImpact(const SensorData& data, bool armed) {
         return false;
     }
 
-    return data.accelerationG >= IMPACT_THRESHOLD_G;
+    return data.motionValid && data.accelerationG >= IMPACT_THRESHOLD_G;
 }
 
 void activateAlert() {

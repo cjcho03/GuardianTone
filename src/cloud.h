@@ -3,8 +3,8 @@
 #include "sensors.h"
 
 void initCloud();
-
-void uploadSensorData(
+bool cloudConnected();
+bool uploadSensorData(
     const SensorData& data,
     int healthScore,
     bool armed,
