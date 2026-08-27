@@ -5,7 +5,7 @@
 #include "alerts.h"
 #include "cloud.h"
 
-constexpr unsigned long SENSOR_INTERVAL_MS = 2000;
+constexpr unsigned long SENSOR_INTERVAL_MS = 3000;
 constexpr unsigned long CLOUD_UPLOAD_INTERVAL_MS = 10000;
 
 unsigned long lastSensorRead = 0;

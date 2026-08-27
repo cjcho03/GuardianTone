@@ -110,12 +110,7 @@ bool uploadSensorData(const SensorData& data, int healthScore, bool armed, bool 
     }
 
     WiFiClientSecure client;
-
-    if (strlen(AZURE_ROOT_CA) > 0) {
-    client.setCACert(AZURE_ROOT_CA);
-    } else {
-        client.setInsecure();
-    }
+    client.setInsecure();
 
     HTTPClient https;
     String url = telemetryUrl();
