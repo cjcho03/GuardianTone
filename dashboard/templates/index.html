@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GuardianTone Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>GuardianTone Dashboard</h1>
+      <p>Guitar environment and impact monitor</p>
+      <p id="connectionPill" class="connection-status">Waiting for data</p>
+    </header>
+
+    <section class="metrics">
+      <div class="metric">
+        <span>Temperature</span>
+        <strong id="temperature">--</strong> °C
+      </div>
+      <div class="metric">
+        <span>Humidity</span>
+        <strong id="humidity">--</strong> % RH
+      </div>
+      <div class="metric">
+        <span>Acceleration</span>
+        <strong id="acceleration">--</strong> g
+      </div>
+      <div class="metric">
+        <span>Health Score</span>
+        <strong id="healthScore">--</strong> / 100
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Environment History</h2>
+      <canvas id="environmentChart" width="900" height="280"></canvas>
+    </section>
+
+    <section class="panel">
+      <h2>Movement History</h2>
+      <canvas id="accelerationChart" width="900" height="280"></canvas>
+    </section>
+
+    <section class="details">
+      <div class="panel">
+        <h2>Device Status</h2>
+        <dl class="state-list">
+          <div><dt>Monitoring</dt><dd id="armed">--</dd></div>
+          <div><dt>Alert</dt><dd id="alert">--</dd></div>
+          <div><dt>Last update</dt><dd id="lastUpdate">--</dd></div>
+          <div><dt>Stored readings</dt><dd id="storedReadings">--</dd></div>
+        </dl>
+      </div>
+
+      <div class="panel">
+        <h2>Recent Alerts</h2>
+        <div id="alerts" class="alerts">
+          <p class="muted">No alert events stored.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
